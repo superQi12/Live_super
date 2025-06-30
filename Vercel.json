@@ -19,5 +19,6 @@
       "dest": "modified_index.html"
     }
   ],
-  "installCommand": "pip install -r requirements.txt" // هذا السطر الجديد
+  "installCommand": "pip install -r requirements.txt",
+  "buildCommand": "" // هذا السطر الجديد والمهم
 }
